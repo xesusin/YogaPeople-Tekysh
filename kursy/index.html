@@ -1590,66 +1590,65 @@
                                                 <script>
                                                     const form = document.getElementById('form');
                                                     const notification = document.getElementById('notification'); // Уведомление
-                                                    // Переменная для хранения типа курса (с массажем или без)
                                                     let courseType = '';
-                                                    // Обработчики событий для кнопок с массажем
+                                                    let courseLink = ''; // Хранит ссылку для Robokassa
+                                                
+                                                    // Обработчики событий для кнопок
                                                     document.getElementById('new_buyNowButtonMassage').addEventListener('click', function () {
                                                         courseType = 'С массажем';
+                                                        courseLink = this.dataset.link; // Сохраняем ссылку из data-link
                                                     });
                                                     document.getElementById('new_buyNowButtonNoMassage').addEventListener('click', function () {
                                                         courseType = 'Без массажа';
+                                                        courseLink = this.dataset.link; // Сохраняем ссылку из data-link
                                                     });
+                                                
                                                     form.addEventListener('submit', function (e) {
                                                         e.preventDefault();
-                                                        // Получаем значения полей формы
+                                                
                                                         const name = document.getElementById('form-field-name').value.trim();
                                                         const phone = document.getElementById('form-field-field_62b03d1').value.trim();
-                                                        // Проверка, что обязательные поля заполнены и выбран тип курса
+                                                
                                                         if (!name || !phone || !courseType) {
                                                             alert('Пожалуйста, заполните все обязательные поля и выберите тип курса.');
                                                             return;
                                                         }
-                                                        // Форматируем сообщение для отправки
+                                                
                                                         const formattedMessage = `Запись на курс «Здоровая спина»\n-----\nТип курса: ${courseType}\nИмя: ${name}\nТелефон: ${phone}`;
-                                                        // Отправляем запрос в Telegram через API
-                                                        fetch('https://api.telegram.org/botc095b85a-cdb7-4cbd-bf3f-c4a5ba86f247/sendMessage', {
+                                                
+                                                        fetch('https://api.telegram.org/bot8162513641:AAGbyFDIZ5dPSrRBtXXzusB_8k3M8cIgXvw/sendMessage', {
                                                             method: 'POST',
                                                             headers: {
                                                                 'Content-Type': 'application/json',
                                                             },
                                                             body: JSON.stringify({
-                                                                chat_id: '-1002260812823', // правильный chat_id
-                                                                text: formattedMessage, // текст сообщения
+                                                                chat_id: '-1002260812823', 
+                                                                text: formattedMessage,
                                                             }),
                                                         })
-                                                            .then(response => response.json())
-                                                            .then(data => {
-                                                                console.log('Ответ от Telegram:', data); // Логируем ответ для проверки
-                                                                if (data.ok) {
-                                                                    // Показ уведомления
-                                                                    notification.style.display = 'block';
-                                                                    // Скрываем уведомление через 3 секунды
-                                                                    setTimeout(() => {
-                                                                        notification.style.display = 'none';
-                                                                    }, 3000);
-                                                                    // Сбрасываем форму и тип курса
-                                                                    form.reset();
-                                                                    courseType = '';
-                                                                    // Задержка 3 секунды перед открытием ссылки
-                                                                    setTimeout(() => {
-                                                                        window.open(document.getElementById('buyNowModal').dataset.link, '_blank'); // Открыть ссылку
-                                                                    }, 3000); // Задержка 3000 ms
-                                                                } else {
-                                                                    console.error('Ошибка при отправке сообщения:', data);
-                                                                    alert('Ошибка при отправке сообщения.');
-                                                                }
-                                                            })
-                                                            .catch(error => {
-                                                                console.error('Ошибка:', error);
-                                                                alert('Ошибка подключения к Telegram API.');
-                                                            });
+                                                        .then(response => response.json())
+                                                        .then(data => {
+                                                            console.log('Ответ от Telegram:', data);
+                                                            if (data.ok) {
+                                                                notification.style.display = 'block';
+                                                                setTimeout(() => {
+                                                                    notification.style.display = 'none';
+                                                                }, 3000);
+                                                
+                                                                form.reset();
+                                                                window.open(courseLink, '_blank'); // Открываем сохраненную ссылку
+                                                            } else {
+                                                                console.error('Ошибка при отправке сообщения:', data);
+                                                                alert('Ошибка при отправке сообщения.');
+                                                            }
+                                                        })
+                                                        .catch(error => {
+                                                            console.error('Ошибка:', error);
+                                                            alert('Ошибка подключения к Telegram API.');
+                                                        });
                                                     });
                                                 </script>
+                                                
                                             </div>
                                             <div id="redirectPopup" class="new_popup" style="display:none;">
                                                 <p>Перенаправление на страницу оплаты...</p>
