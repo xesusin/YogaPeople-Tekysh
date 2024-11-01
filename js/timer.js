@@ -1,4 +1,4 @@
-const endDate = new Date(new Date().getFullYear(), 9, 15, 10, 0, 0); // 9 - это октябрь (нумерация с 0)
+const endDate = new Date(2024, 10, 18, 10, 0, 0);
 const timerElement = document.getElementById('timer');
 
 function updateTimer() {
