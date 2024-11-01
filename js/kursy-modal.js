@@ -3,12 +3,16 @@ document.getElementById('new_buyNowButtonMassage').addEventListener('click', fun
     document.getElementById('buyNowModal').style.display = 'block';
     // Сохраняем ссылку на Робокассу в модальном окне
     document.getElementById('buyNowModal').dataset.link = this.dataset.link;
+    // Сохраняем информацию о курсе с массажем
+    document.getElementById('buyNowModal').dataset.courseType = 'С массажем';
 });
 
 document.getElementById('new_buyNowButtonNoMassage').addEventListener('click', function () {
     document.getElementById('buyNowModal').style.display = 'block';
     // Сохраняем ссылку на Робокассу в модальном окне
     document.getElementById('buyNowModal').dataset.link = this.dataset.link;
+    // Сохраняем информацию о курсе без массажа
+    document.getElementById('buyNowModal').dataset.courseType = 'Без массажа';
 });
 
 // Закрытие модального окна
@@ -42,17 +46,20 @@ document.getElementById('new_sendMessage').addEventListener('click', function ()
         return;
     }
 
+    // Получаем тип курса из data-атрибута модального окна
+    const courseType = document.getElementById('buyNowModal').dataset.courseType;
+
     // Форматирование сообщения
-    const formattedMessage = `Курс «Тревога»\nТелефон: ${new_senderPhone}\nИмя: ${message}`;
+    const formattedMessage = `Курс «Здоровая спина»\nТип курса: ${courseType}\nТелефон: ${new_senderPhone}\nИмя: ${message}`;
 
     // Отправка сообщения в Telegram
-    fetch(`https://api.telegram.org/bot8162513641:AAGbyFDIZ5dPSrRBtXXzusB_8k3M8cIgXvw/sendMessage`, {
+    fetch(`https://api.telegram.org/bot7644126789:AAFD6o0SMZInaXfEZAgx8galvAR-TFym8n8/sendMessage`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            chat_id: '7439437420',
+            chat_id: '2050726086',
             text: formattedMessage,
         }),
     })

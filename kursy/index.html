@@ -1046,12 +1046,16 @@
                             Возможна беспроцентная рассрочка.</p>
                         <p>🎁При оплате до 5 ноября – месяц доступа к ежедневным онлайн-занятиям по программе Комбо – в
                             подарок.</p>
-                            <div class="subwrapper-custom">
-                                <h1 style="margin-bottom: 10px;">Записаться на курс</h1>
-                            </div>
+                        <div class="subwrapper-custom">
+                            <h1 style="margin-bottom: 10px;">Записаться на курс</h1>
+                        </div>
                         <div class="subwrapper-custom" style="gap: 10px;">
-                            <button id="new_buyNowButtonMassage" data-link="https://auth.robokassa.ru/merchant/Invoice/YkCSWCdk1Um8zXVEb7omqg">С массажем</button>
-                            <button id="new_buyNowButtonNoMassage" data-link="https://auth.robokassa.ru/merchant/Invoice/hdB00YmzQUeXCUkfwNhhaw">Без массажа</button>
+                            <button id="new_buyNowButtonMassage"
+                                data-link="https://auth.robokassa.ru/merchant/Invoice/YkCSWCdk1Um8zXVEb7omqg">С
+                                массажем</button>
+                            <button id="new_buyNowButtonNoMassage"
+                                data-link="https://auth.robokassa.ru/merchant/Invoice/hdB00YmzQUeXCUkfwNhhaw">Без
+                                массажа</button>
                         </div>
                     </div>
                     <style>
@@ -1059,6 +1063,7 @@
                             display: flex;
                             justify-content: center;
                         }
+
                         @media (max-width: 465px) {
                             .subwrapper-custom {
                                 flex-direction: column;
@@ -1194,15 +1199,15 @@
                                         <div class="chat-body">
                                             <form class="elementor-form" method="post" id="form" name="Напишите нам">
                                                 <input type="hidden" name="access_key"
-                                                    value="c095b85a-cdb7-4cbd-bf3f-c4a5ba86f247">
-
+                                                    value="65843dcd-2b63-43b1-8a2f-f2941ae9782d">
                                                 <div class="elementor-form-fields-wrapper elementor-labels-above">
                                                     <div
                                                         class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-100 elementor-field-required elementor-mark-required">
                                                         <label for="form-field-name"
                                                             class="elementor-field-label">Имя</label>
                                                         <input size="1" type="text"
-                                                            name="[Запись на курс Тревога] - Имя:" id="form-field-name"
+                                                            name="[Запись на курс «Здоровая спина»] - Имя:"
+                                                            id="form-field-name"
                                                             class="elementor-field elementor-size-md elementor-field-textual"
                                                             placeholder="Имя" required="required" aria-required="true">
                                                     </div>
@@ -1211,7 +1216,7 @@
                                                         <label for="form-field-field_62b03d1"
                                                             class="elementor-field-label">Телефон</label>
                                                         <input size="1" type="tel"
-                                                            name="[Запись на курс Тревога] - Телефон"
+                                                            name="[Запись на «Здоровая спина»] - Телефон"
                                                             id="form-field-field_62b03d1"
                                                             class="elementor-field elementor-size-md elementor-field-textual"
                                                             placeholder="Ваш номер телефона" required="required"
@@ -1236,8 +1241,7 @@
                                                                     </svg>
                                                                 </span>
                                                                 <span class="elementor-button-text">Отправить</span>
-                                                                <div id="notification" style="display: none;">Сообщение
-                                                                    успешно отправлено!</div>
+                                                                <div id="notification" style="display: none;">Перенаправление на страницу оплаты...</div>
                                                             </span>
                                                         </button>
                                                     </div>
@@ -1246,28 +1250,45 @@
 
                                             <style>
                                                 #notification {
-                                                    position: absolute;
-                                                    top: 20px;
-                                                    /* Регулируй как нужно */
+                                                    position: fixed;
+                                                    /* Changed to fixed to center on the entire screen */
+                                                    top: 50%;
+                                                    /* Center vertically */
                                                     left: 50%;
-                                                    transform: translateX(-50%);
-                                                    background-color: #4CAF50;
+                                                    /* Center horizontally */
+                                                    transform: translate(-50%, -50%);
+                                                    /* Adjust position to center */
+                                                    background-color: #808080;
+                                                    /* Gray background */
                                                     color: white;
-                                                    padding: 10px 20px;
+                                                    padding: 20px 40px;
+                                                    /* Increased padding */
                                                     border-radius: 5px;
                                                     z-index: 1000;
                                                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                                                     font-size: 16px;
+                                                    display: none;
+                                                    /* Make sure it's hidden by default */
                                                 }
                                             </style>
 
                                             <!-- Result Message Element -->
                                             <div id="result" style="display: none;"></div>
-
                                             <script>
                                                 const form = document.getElementById('form');
-                                                const result = document.getElementById('result');
                                                 const notification = document.getElementById('notification'); // Уведомление
+
+                                                // Переменная для хранения типа курса (с массажем или без)
+                                                let courseType = '';
+
+                                                // Обработчики событий для кнопок с массажем
+                                                document.getElementById('new_buyNowButtonMassage').addEventListener('click', function () {
+                                                    courseType = 'С массажем';
+                                                });
+
+                                                document.getElementById('new_buyNowButtonNoMassage').addEventListener('click', function () {
+                                                    courseType = 'Без массажа';
+                                                });
 
                                                 form.addEventListener('submit', function (e) {
                                                     e.preventDefault();
@@ -1276,23 +1297,23 @@
                                                     const name = document.getElementById('form-field-name').value.trim();
                                                     const phone = document.getElementById('form-field-field_62b03d1').value.trim();
 
-                                                    // Проверка, что обязательные поля заполнены
-                                                    if (!name || !phone) {
-                                                        alert('Пожалуйста, заполните все обязательные поля.');
+                                                    // Проверка, что обязательные поля заполнены и выбран тип курса
+                                                    if (!name || !phone || !courseType) {
+                                                        alert('Пожалуйста, заполните все обязательные поля и выберите тип курса.');
                                                         return;
                                                     }
 
                                                     // Форматируем сообщение для отправки
-                                                    const formattedMessage = `Запись на курс «Тревога»\n-----\nИмя: ${name}\nТелефон: ${phone}`;
+                                                    const formattedMessage = `Запись на курс «Здоровая спина»\n-----\nТип курса: ${courseType}\nИмя: ${name}\nТелефон: ${phone}`;
 
                                                     // Отправляем запрос в Telegram через API
-                                                    fetch('https://api.telegram.org/bot8162513641:AAGbyFDIZ5dPSrRBtXXzusB_8k3M8cIgXvw/sendMessage', {
+                                                    fetch('https://api.telegram.org/bot7644126789:AAFD6o0SMZInaXfEZAgx8galvAR-TFym8n8/sendMessage', {
                                                         method: 'POST',
                                                         headers: {
                                                             'Content-Type': 'application/json',
                                                         },
                                                         body: JSON.stringify({
-                                                            chat_id: '-1002260812823', // правильный chat_id
+                                                            chat_id: '2050726086', // правильный chat_id
                                                             text: formattedMessage, // текст сообщения
                                                         }),
                                                     })
@@ -1308,11 +1329,14 @@
                                                                     notification.style.display = 'none';
                                                                 }, 3000);
 
-                                                                // Сбрасываем форму
+                                                                // Сбрасываем форму и тип курса
                                                                 form.reset();
+                                                                courseType = '';
 
-                                                                // Открываем Robokassa в новой вкладке
-                                                                window.open('https://auth.robokassa.ru/merchant/Invoice/QEtBuKYjZ0maeBvy4gSAhA', '_blank');
+                                                                // Задержка 3 секунды перед открытием ссылки
+                                                                setTimeout(() => {
+                                                                    window.open(document.getElementById('buyNowModal').dataset.link, '_blank'); // Открыть ссылку
+                                                                }, 3000); // Задержка 3000 ms
                                                             } else {
                                                                 console.error('Ошибка при отправке сообщения:', data);
                                                                 alert('Ошибка при отправке сообщения.');
