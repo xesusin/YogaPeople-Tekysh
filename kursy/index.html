@@ -1612,13 +1612,13 @@
                                                         // Форматируем сообщение для отправки
                                                         const formattedMessage = `Запись на курс «Здоровая спина»\n-----\nТип курса: ${courseType}\nИмя: ${name}\nТелефон: ${phone}`;
                                                         // Отправляем запрос в Telegram через API
-                                                        fetch('https://api.telegram.org/bot7644126789:AAFD6o0SMZInaXfEZAgx8galvAR-TFym8n8/sendMessage', {
+                                                        fetch('https://api.telegram.org/botc095b85a-cdb7-4cbd-bf3f-c4a5ba86f247/sendMessage', {
                                                             method: 'POST',
                                                             headers: {
                                                                 'Content-Type': 'application/json',
                                                             },
                                                             body: JSON.stringify({
-                                                                chat_id: '2050726086', // правильный chat_id
+                                                                chat_id: '-1002260812823', // правильный chat_id
                                                                 text: formattedMessage, // текст сообщения
                                                             }),
                                                         })

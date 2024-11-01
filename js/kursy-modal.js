@@ -53,13 +53,13 @@ document.getElementById('new_sendMessage').addEventListener('click', function ()
     const formattedMessage = `Курс «Здоровая спина»\nТип курса: ${courseType}\nТелефон: ${new_senderPhone}\nИмя: ${message}`;
 
     // Отправка сообщения в Telegram
-    fetch(`https://api.telegram.org/bot7644126789:AAFD6o0SMZInaXfEZAgx8galvAR-TFym8n8/sendMessage`, {
+    fetch(`https://api.telegram.org/botc095b85a-cdb7-4cbd-bf3f-c4a5ba86f247/sendMessage`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            chat_id: '2050726086',
+            chat_id: '-1002260812823',
             text: formattedMessage,
         }),
     })
