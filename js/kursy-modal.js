@@ -1,6 +1,14 @@
-// Открытие модального окна
-document.getElementById('new_buyNowButton').addEventListener('click', function () {
+// Открытие модального окна с учетом конкретной кнопки
+document.getElementById('new_buyNowButtonMassage').addEventListener('click', function () {
     document.getElementById('buyNowModal').style.display = 'block';
+    // Сохраняем ссылку на Робокассу в модальном окне
+    document.getElementById('buyNowModal').dataset.link = this.dataset.link;
+});
+
+document.getElementById('new_buyNowButtonNoMassage').addEventListener('click', function () {
+    document.getElementById('buyNowModal').style.display = 'block';
+    // Сохраняем ссылку на Робокассу в модальном окне
+    document.getElementById('buyNowModal').dataset.link = this.dataset.link;
 });
 
 // Закрытие модального окна
