@@ -566,132 +566,132 @@
                         </div>
                     </div>
                     <div class="yoga-menu-toggle" id="menu-toggle">
-						<svg class="menu-icon" width="30" height="30" viewBox="0 0 1024 1024">
-							<path
-								d="M104 333H896C929 333 958 304 958 271S929 208 896 208H104C71 208 42 237 42 271S71 333 104 333ZM104 583H896C929 583 958 554 958 521S929 458 896 458H104C71 458 42 487 42 521S71 583 104 583ZM104 833H896C929 833 958 804 958 771S929 708 896 708H104C71 708 42 737 42 771S71 833 104 833Z">
-							</path>
-						</svg>
-						<svg class="close-icon" width="30" height="30" viewBox="0 0 1000 1000"
-							xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M742 167L500 408 258 167C246 154 233 150 217 150 196 150 179 158 167 167 154 179 150 196 150 212 150 229 154 242 171 254L408 500 167 742C138 771 138 800 167 829 196 858 225 858 254 829L496 587 738 829C750 842 767 846 783 846 800 846 817 842 829 829 842 817 846 804 846 783 846 767 842 750 829 737L588 500 833 258C863 229 863 200 833 171 804 137 775 137 742 167Z">
-							</path>
-						</svg>
-					</div>
-					<div class="yoga-sidebar" id="sidebar">
-						<ul>
-							<li><a href="../o-nas/index.html">О Нас</a></li>
-							<li><a href="../uslugi/index.html">Услуги</a></li>
-							<li><a href="../raspisanie/index.html">Расписание</a></li>
-							<li><a href="../czena-zanyatij/index.html">Цены</a></li>
-							<li><a href="../kursy/index.html">Курсы</a></li>
-							<li><a href="../kontakty/index.html">Контакты</a></li>
-						</ul>
-					</div>
-					<script src="../js/main-close-menu.js?ver=2.1.0"></script>
-					<style>
-						.yoga-menu-toggle {
-							display: none;
-							cursor: pointer;
-						}
+                        <svg class="menu-icon" width="30" height="30" viewBox="0 0 1024 1024">
+                            <path
+                                d="M104 333H896C929 333 958 304 958 271S929 208 896 208H104C71 208 42 237 42 271S71 333 104 333ZM104 583H896C929 583 958 554 958 521S929 458 896 458H104C71 458 42 487 42 521S71 583 104 583ZM104 833H896C929 833 958 804 958 771S929 708 896 708H104C71 708 42 737 42 771S71 833 104 833Z">
+                            </path>
+                        </svg>
+                        <svg class="close-icon" width="30" height="30" viewBox="0 0 1000 1000"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M742 167L500 408 258 167C246 154 233 150 217 150 196 150 179 158 167 167 154 179 150 196 150 212 150 229 154 242 171 254L408 500 167 742C138 771 138 800 167 829 196 858 225 858 254 829L496 587 738 829C750 842 767 846 783 846 800 846 817 842 829 829 842 817 846 804 846 783 846 767 842 750 829 737L588 500 833 258C863 229 863 200 833 171 804 137 775 137 742 167Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="yoga-sidebar" id="sidebar">
+                        <ul>
+                            <li><a href="../o-nas/index.html">О Нас</a></li>
+                            <li><a href="../uslugi/index.html">Услуги</a></li>
+                            <li><a href="../raspisanie/index.html">Расписание</a></li>
+                            <li><a href="../czena-zanyatij/index.html">Цены</a></li>
+                            <li><a href="../kursy/index.html">Курсы</a></li>
+                            <li><a href="../kontakty/index.html">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <script src="../js/main-close-menu.js?ver=2.1.0"></script>
+                    <style>
+                        .yoga-menu-toggle {
+                            display: none;
+                            cursor: pointer;
+                        }
 
-						.yoga-sidebar ul {
-							list-style: none;
-							padding: 0;
-							margin: 0;
-						}
+                        .yoga-sidebar ul {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                        }
 
-						.yoga-sidebar ul li {
-							margin: 0;
-							/* Убираем отступы между элементами */
-						}
+                        .yoga-sidebar ul li {
+                            margin: 0;
+                            /* Убираем отступы между элементами */
+                        }
 
-						.yoga-sidebar ul li a {
-							text-decoration: none;
-							color: #333;
-							font-size: 14px;
-							padding: 10px 10px;
-							/* Добавляем паддинг для кликабельности */
-							display: block;
-						}
+                        .yoga-sidebar ul li a {
+                            text-decoration: none;
+                            color: #333;
+                            font-size: 14px;
+                            padding: 10px 10px;
+                            /* Добавляем паддинг для кликабельности */
+                            display: block;
+                        }
 
 
-						.menu-icon,
-						.close-icon {
-							fill: #84BA0F;
-							transition: opacity 0.3s ease;
-						}
+                        .menu-icon,
+                        .close-icon {
+                            fill: #84BA0F;
+                            transition: opacity 0.3s ease;
+                        }
 
-						.close-icon {
-							display: none;
-							/* Скрываем крестик по умолчанию */
-						}
+                        .close-icon {
+                            display: none;
+                            /* Скрываем крестик по умолчанию */
+                        }
 
-						/* Активное состояние */
-						.yoga-menu-toggle.active .menu-icon {
-							display: none;
-							/* Скрываем иконку меню */
-						}
+                        /* Активное состояние */
+                        .yoga-menu-toggle.active .menu-icon {
+                            display: none;
+                            /* Скрываем иконку меню */
+                        }
 
-						.yoga-menu-toggle.active .close-icon {
-							display: block;
-							/* Показываем крестик */
-						}
+                        .yoga-menu-toggle.active .close-icon {
+                            display: block;
+                            /* Показываем крестик */
+                        }
 
-						.yoga-sidebar {
-							position: absolute;
-							top: 100%;
-							left: 0;
-							width: 100%;
-							background-color: #ffffff;
-							padding: 0;
-							transition: transform 0.3s ease;
-							transform: translateY(-110%);
-							z-index: 1000;
-							display: none;
-						}
+                        .yoga-sidebar {
+                            position: absolute;
+                            top: 100%;
+                            left: 0;
+                            width: 100%;
+                            background-color: #ffffff;
+                            padding: 0;
+                            transition: transform 0.3s ease;
+                            transform: translateY(-110%);
+                            z-index: 1000;
+                            display: none;
+                        }
 
-						.yoga-sidebar.active {
-							display: block;
-							transform: translateY(0);
-							user-select: none;
-							pointer-events: auto;
-							/* Убедитесь, что pointer-events = auto */
-						}
+                        .yoga-sidebar.active {
+                            display: block;
+                            transform: translateY(0);
+                            user-select: none;
+                            pointer-events: auto;
+                            /* Убедитесь, что pointer-events = auto */
+                        }
 
-						.yoga-sidebar ul li:hover {
-							background-color: #84BA0F !important;
-							/* Чёрный фон при наведении */
-							color: #fff;
-							/* Цвет текста при наведении */
-						}
+                        .yoga-sidebar ul li:hover {
+                            background-color: #84BA0F !important;
+                            /* Чёрный фон при наведении */
+                            color: #fff;
+                            /* Цвет текста при наведении */
+                        }
 
-						@media (max-width: 1030px) {
-							.yoga-menu-toggle {
-								display: flex;
-							}
+                        @media (max-width: 1030px) {
+                            .yoga-menu-toggle {
+                                display: flex;
+                            }
 
-							.yoga-sidebar {
-								display: none;
-							}
+                            .yoga-sidebar {
+                                display: none;
+                            }
 
-							.yoga-sidebar.active {
-								display: block;
-							}
-						}
+                            .yoga-sidebar.active {
+                                display: block;
+                            }
+                        }
 
-						@media (max-width: 601px) {
-							.yoga-menu-toggle {
-								margin-top: 10px;
-							}
-						}
+                        @media (max-width: 601px) {
+                            .yoga-menu-toggle {
+                                margin-top: 10px;
+                            }
+                        }
 
-						@media (min-width: 1030px) {
-							.yoga-sidebar.active {
-								display: none;
-							}
-						}
-					</style>
+                        @media (min-width: 1030px) {
+                            .yoga-sidebar.active {
+                                display: none;
+                            }
+                        }
+                    </style>
                 </div>
                 <style>
                     /*! elementor - v3.18.0 - 06-12-2023 */
@@ -1030,6 +1030,138 @@
 
 
 
+                <div class="course-wrapper">
+                    <div>
+                        <h3 class="h3-title">Курс «Здоровая спина»</h3>
+                        <div class="timer-wrapper"><span id="timer">Курс доступен</span></div>
+                    </div>
+
+                    <div class="course-details">
+                        <p>ЙОГАТЕРАПИЯ ПРИ БОЛЯХ И СКОВАННОСТИ В СПИНЕ. Курс "Здоровая спина".</p>
+                        <p>Количество мест – 6.</p>
+                        <p>🏠Место проведения – студия на Шлиссельбургском 37 (возможно участие онлайн)</p>
+                        <p>🗓Старт – 18 ноября. Длительность – 6 недель.</p>
+                        <p>⏰️Время проведения – понедельник и среда 19.45.</p>
+                        <p>💳Стоимость – 14500 рублей без массажа/31500 рублей – с массажем по триггерным точкам.
+                            Возможна беспроцентная рассрочка.</p>
+                        <p>🎁При оплате до 5 ноября – месяц доступа к ежедневным онлайн-занятиям по программе Комбо – в
+                            подарок.</p>
+                        <div class="button-wrapper-custom" style="display: flex; justify-content: center;"><button id="new_buyNowButton">Записаться на курс</button></div>
+                    </div>
+
+                    <div class="course-recommendation">
+                        <h2>Курс рекомендован, если у Вас:</h2>
+                        <ul>
+                            <li>🚫диагностированы протрузии и/или грыжи МПД</li>
+                            <li>🚫остеохондроз</li>
+                            <li>🚫есть страх, что Вы недостаточно гибкие или с Вашими заболеваниями нельзя заниматься
+                                спортом</li>
+                            <li>🚫нарушение осанки и/или плоскостопие</li>
+                            <li>🚫боли и/или скованность в спине</li>
+                            <li>🚫сидячая работа</li>
+                            <li>🚫малоподвижный образ жизни</li>
+                            <li>🚫головные боли напряжения</li>
+                            <li>🚫отёки и/или варикозная болезнь.</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-approach">
+                        <h2>Комплексная работа с болью в спине и улучшением осанки:</h2>
+                        <ul>
+                            <li>🔸визуальная диагностика осанки, которая позволит определить "проблемные" зоны Вашего
+                                тела;</li>
+                            <li>🔸улучшение подвижности позвоночника и всех суставов;</li>
+                            <li>🔸укрепление глубоких мышц спины;</li>
+                            <li>🔸работа со стопами и профилактика плоскостопия;</li>
+                            <li>🔸работа с шейно-воротниковой зоной, снятие мышечных закрепощений, работа с головной
+                                болью напряжения;</li>
+                            <li>🔸техники работы с хронической болью в спине;</li>
+                            <li>🔸работа с дыханием, развитие дыхательной мускулатуры и улучшение дыхательных паттернов;
+                            </li>
+                            <li>🔸уменьшение сутулости;</li>
+                            <li>🔸укрепление мышц кора, подтяжка живота, бедер и ягодиц;</li>
+                            <li>🔸техники релаксации.</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-content">
+                        <h2>Что будет на курсе:</h2>
+                        <ul>
+                            <li>🎯2 часовых индивидуальных занятия с йогатерапевтом в студии/онлайн (в начале и в конце
+                                Курса)</li>
+                            <li>🎯9 часовых йогатерапевтических занятий в студии/онлайн</li>
+                            <li>🎯закрытый чат поддержки в ТГ</li>
+                            <li>🎯короткие комплексы занятий на каждый день и нужная теория</li>
+                            <li>🎯входное тестирование и тестирование по окончании Курса</li>
+                            <li>🎯1 сеанс йога-нидры – мощной техники расслабления и перезагрузки</li>
+                            <li>🎯бонус – 6 недель ежедневных онлайн-занятий по программе Комбо в период прохождения
+                                Курса</li>
+                            <li>🎯6 часовых сеансов глубокотканного массажа на тарифе с массажем.</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-results">
+                        <h2>В результате Вы узнаете, как с помощью регулярной практики йоги:</h2>
+                        <ul>
+                            <li>✅устранить боли в спине и дискомфорт в шее</li>
+                            <li>✅нормализовать сон и снизить тревожность</li>
+                            <li>✅уменьшить вероятность обострений</li>
+                            <li>✅убрать скованность в теле</li>
+                            <li>✅улучшить настроение и качество жизни.</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-author">
+                        <p>🖐 Автор Курса – Марина Путинцева, основатель и руководитель сети студий йоги и массажа в
+                            СПБ, преподаватель йоги с 13-летним стажем, практикующий йогатерапевт и психолог.</p>
+                    </div>
+                </div>
+
+                <style>
+                    .course-recommendation {
+                        background-color: #ffffff;
+                        padding: 20px;
+                        border-radius: 8px;
+                        max-width: 960px;
+                        margin: 20px auto;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    }
+                    .course-approach {
+                        background-color: #ffffff;
+                        padding: 20px;
+                        border-radius: 8px;
+                        max-width: 960px;
+                        margin: 20px auto;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .course-content {
+                        background-color: #ffffff;
+                        padding: 20px;
+                        border-radius: 8px;
+                        max-width: 960px;
+                        margin: 20px auto;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .course-results {
+                        background-color: #ffffff;
+                        padding: 20px;
+                        border-radius: 8px;
+                        max-width: 960px;
+                        margin: 20px auto;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    }
+
+                    .course-author {
+                        background-color: #ffffff;
+                        padding: 20px;
+                        border-radius: 8px;
+                        max-width: 960px;
+                        margin: 20px auto;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    }
+                </style>
 
 
 
@@ -1041,8 +1173,8 @@
                 <div class="course-wrapper">
                     <div>
                         <h3 class="h3-title">Курс «Тревога». Как научиться жить без неё?»</h3>
-                        <h3 class="h3-title">Старт через</h3>
-                        <div class="timer-wrapper"><span id="timer">загрузка...</span></div>
+                        <div class="timer-wrapper"><span style="border: 2px solid red;" id="timer">Курс завершён</span>
+                        </div>
                     </div>
                     <div class="course-container">
                         <div class="course-info">
@@ -1062,113 +1194,14 @@
                             </div>
                             <p>4 200₽ <span class="discount">5 600₽</span></p>
                             <p>Скидка 25%</p>
-                            <script src="../js/timer.js?ver=2.1.0"></script>
-                            <button id="new_buyNowButton">Записаться на курс</button>
+                            <button>Курс завершён</button>
                             <!-- Модальное окно -->
                             <div id="buyNowModal" class="modal" style="display:none;">
                                 <div class="wrapper-modal">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                     <div class="modal-content">
                                         <span class="close" id="closeModal">&times;</span>
                                         <h2>Введите данные</h2>
                                         <div class="chat-body">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                             <form class="elementor-form" method="post" id="form" name="Напишите нам">
                                                 <input type="hidden" name="access_key"
                                                     value="c095b85a-cdb7-4cbd-bf3f-c4a5ba86f247">
@@ -1302,121 +1335,6 @@
                                                 });
                                             </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                         </div>
                                         <div id="redirectPopup" class="new_popup" style="display:none;">
                                             <p>Перенаправление на страницу оплаты...</p>
@@ -1427,6 +1345,8 @@
                             <script src="../js/kursy-modal.js?ver=2.1.0"></script>
                         </div>
                     </div>
+
+
                     <div class="course-details">
                         <h1>Основная информация</h1>
                         <p>⏰️ Длительность – 6 недель.</p>
@@ -1814,8 +1734,8 @@
                                         <figure class="elementor-image-box-img"><img decoding="async" width="300"
                                                 height="300" src="../wp-content/uploads/2023/12/5-1-300x300.png"
                                                 class="attachment-medium size-medium wp-image-654"
-                                                alt="Логотип йога пипл"
-                                                sizes="(max-width: 300px) 100vw, 300px" /></figure>
+                                                alt="Логотип йога пипл" sizes="(max-width: 300px) 100vw, 300px" />
+                                        </figure>
                                         <div class="elementor-image-box-content"><span
                                                 class="elementor-image-box-title">YogaPeople</span>
                                             <p class="elementor-image-box-description">Сеть студий йоги и массажа в СПБ
