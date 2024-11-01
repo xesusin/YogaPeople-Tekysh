@@ -55,8 +55,8 @@ document.getElementById('new_sendMessage').addEventListener('click', function ()
                 const new_popup = document.getElementById('redirectPopup');
                 new_popup.style.display = 'flex'; // Показать всплывающее окно
 
-                // Моментальное открытие ссылки на Робокассу
-                window.open('https://auth.robokassa.ru/merchant/Invoice/hdB00YmzQUeXCUkfwNhhaw', '_blank'); // Открыть ссылку
+                // Моментальное открытие ссылки на Робокассу из data-link модального окна
+                window.open(document.getElementById('buyNowModal').dataset.link, '_blank'); // Открыть ссылку
 
                 // Очистить поля формы
                 document.getElementById('new_chatMessage').value = '';
