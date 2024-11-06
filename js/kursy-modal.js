@@ -1,9 +1,9 @@
 // Открытие модального окна с учетом конкретной кнопки
 function openModal(button, courseType) {
     const modal = document.getElementById('buyNowModal');
-    modal.style.display = 'block'; // Открываем модальное окно
-    modal.dataset.link = button.dataset.link; // Сохраняем ссылку
-    modal.dataset.courseType = courseType; // Сохраняем тип курса
+    modal.style.display = 'block'; 
+    modal.dataset.link = button.dataset.link; 
+    modal.dataset.courseType = courseType;
 }
 
 // Обработчики для кнопок
@@ -29,18 +29,27 @@ if (buyNowButtonMassage && buyNowButtonNoMassage) {
 const closeModalButton = document.getElementById('closeModal');
 if (closeModalButton) {
     closeModalButton.addEventListener('click', function () {
-        document.getElementById('buyNowModal').style.display = 'none';
+        const modal = document.getElementById('buyNowModal');
+        modal.style.display = 'none';
+
+        // Очистка данных модального окна
+        modal.dataset.link = '';
+        modal.dataset.courseType = '';
     });
 }
 
+// Закрытие модального окна при клике вне его
 // Закрытие модального окна при клике вне его
 window.addEventListener('click', function (event) {
     const modal = document.getElementById('buyNowModal');
     if (event.target === modal) {
         modal.style.display = 'none';
+
+        // Очистка данных модального окна
+        modal.dataset.link = '';
+        modal.dataset.courseType = '';
     }
 });
-
 
 // Отправка сообщения
 document.getElementById('new_sendMessage').addEventListener('click', function () {
