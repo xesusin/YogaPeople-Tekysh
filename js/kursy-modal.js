@@ -1,53 +1,30 @@
 // Открытие модального окна с учетом конкретной кнопки
-function openModal(button, courseType) {
-    const modal = document.getElementById('buyNowModal');
-    modal.style.display = 'block'; 
-    modal.dataset.link = button.dataset.link; 
-    modal.dataset.courseType = courseType;
-}
+document.getElementById('new_buyNowButtonMassage').addEventListener('click', function () {
+    document.getElementById('buyNowModal').style.display = 'block';
+    // Сохраняем ссылку на Робокассу в модальном окне
+    document.getElementById('buyNowModal').dataset.link = this.dataset.link;
+    // Сохраняем информацию о курсе с массажем
+    document.getElementById('buyNowModal').dataset.courseType = 'С массажем';
+});
 
-// Обработчики для кнопок
-const buyNowButtonMassage = document.getElementById('new_buyNowButtonMassage');
-const buyNowButtonNoMassage = document.getElementById('new_buyNowButtonNoMassage');
-
-if (buyNowButtonMassage && buyNowButtonNoMassage) {
-    // Поддержка событий 'click' и 'touchstart'
-    ['click', 'touchstart'].forEach(eventType => {
-        buyNowButtonMassage.addEventListener(eventType, function (event) {
-            event.preventDefault();
-            openModal(this, 'С массажем');
-        });
-        
-        buyNowButtonNoMassage.addEventListener(eventType, function (event) {
-            event.preventDefault();
-            openModal(this, 'Без массажа');
-        });
-    });
-}
+document.getElementById('new_buyNowButtonNoMassage').addEventListener('click', function () {
+    document.getElementById('buyNowModal').style.display = 'block';
+    // Сохраняем ссылку на Робокассу в модальном окне
+    document.getElementById('buyNowModal').dataset.link = this.dataset.link;
+    // Сохраняем информацию о курсе без массажа
+    document.getElementById('buyNowModal').dataset.courseType = 'Без массажа';
+});
 
 // Закрытие модального окна
-const closeModalButton = document.getElementById('closeModal');
-if (closeModalButton) {
-    closeModalButton.addEventListener('click', function () {
-        const modal = document.getElementById('buyNowModal');
-        modal.style.display = 'none';
+document.getElementById('closeModal').addEventListener('click', function () {
+    document.getElementById('buyNowModal').style.display = 'none';
+});
 
-        // Очистка данных модального окна
-        modal.dataset.link = '';
-        modal.dataset.courseType = '';
-    });
-}
-
-// Закрытие модального окна при клике вне его
 // Закрытие модального окна при клике вне его
 window.addEventListener('click', function (event) {
     const modal = document.getElementById('buyNowModal');
     if (event.target === modal) {
         modal.style.display = 'none';
-
-        // Очистка данных модального окна
-        modal.dataset.link = '';
-        modal.dataset.courseType = '';
     }
 });
 
