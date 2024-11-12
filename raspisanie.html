@@ -1105,11 +1105,11 @@
 									const notification = document.getElementById("notification");
 									let selectedLink = '';
 									let selectedCourseType = '';
-
+								
 									// Define Telegram API URL
 									const telegramApiUrl = "https://api.telegram.org/bot8162513641:AAGbyFDIZ5dPSrRBtXXzusB_8k3M8cIgXvw/sendMessage";
 									const chatId = "-1002260812823"; // Replace with your chat ID
-
+								
 									// Function to send message to Telegram
 									function sendTelegramMessage(courseType, name, phone) {
 										const message = `Новая запись: ${courseType}\n----\nИмя: ${name}\nТелефон: ${phone}`;
@@ -1118,43 +1118,43 @@
 											.then(data => console.log('Message sent to Telegram:', data))
 											.catch(error => console.error('Error sending message to Telegram:', error));
 									}
-
+								
 									// Открытие модального окна
 									function openModal(link, courseType) {
 										selectedLink = link;
 										selectedCourseType = courseType; // Store course type
 										modal.style.display = 'flex';
 									}
-
+								
 									// Закрытие модального окна
 									closeModalButton.onclick = function () {
 										modal.style.display = 'none';
 									}
-
+								
 									// Закрытие при клике за пределами модального окна
 									modal.onclick = function (event) {
 										if (event.target === modal) {
 											modal.style.display = 'none';
 										}
 									}
-
+								
 									// Обработка отправки формы
 									paymentForm.onsubmit = function (event) {
 										event.preventDefault(); // Prevent default form submission
 										notification.style.display = 'block'; // Show redirect message
-
+								
 										// Extract name and phone from form fields
 										const name = document.getElementById("form-field-name").value;
 										const phone = document.getElementById("form-field-field_62b03d1").value;
-
+								
 										sendTelegramMessage(selectedCourseType, name, phone); // Send Telegram message with course type, name, and phone
-										setTimeout(() => {
-											window.open(selectedLink, '_blank'); // Open payment link
-											modal.style.display = 'none'; // Close modal
-											notification.style.display = 'none'; // Hide message after redirect
-										}, 2000); // Delay to show message
+								
+										// Open payment link in a new tab directly after form submission
+										window.open(selectedLink, '_blank'); // Open payment link in new tab
+										modal.style.display = 'none'; // Close modal
+										notification.style.display = 'none'; // Hide message after redirect
 									}
-
+								
 									// Add event listener to buttons
 									document.querySelectorAll(".custom-btn").forEach(button => {
 										button.onclick = function () {
@@ -1162,16 +1162,17 @@
 											openModal(this.dataset.link, courseType);
 										};
 									});
-
+								
 									// Open modal with specific course type for each button
 									document.getElementById('new_buyNowButtonMassage1').addEventListener('click', function () {
 										openModal(this.dataset.link, 'Комбо');
 									});
-
+								
 									document.getElementById('new_buyNowButtonMassage2').addEventListener('click', function () {
 										openModal(this.dataset.link, 'Zoom');
 									});
 								</script>
+								
 
 								<style>
 									/* Стили для модального окна */
