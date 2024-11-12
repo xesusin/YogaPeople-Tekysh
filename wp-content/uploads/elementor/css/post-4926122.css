@@ -1085,13 +1085,13 @@ body.elementor-page-492>.elementor-motion-effects-container>.elementor-motion-ef
 }
 
 .tab-link:hover {
-	background-color: #84BA0F;
+	background-color: #84BA0F !important;
 	color: white !important;
 }
 
 .tab-link.active {
 	color: white !important;
-	background-color: #84BA0F;
+	background-color: #84BA0F !important;
 }
 
 .tab-content {
