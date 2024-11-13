@@ -554,10 +554,12 @@
                                     </li>
                                     <li
                                         class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-434 current_page_item menu-item-798">
-                                        <a href="kontakty.html" aria-current="page" class="elementor-item">Контакты</a>
+                                        <a href="kontakty.html" aria-current="page"
+                                            class="elementor-item">Контакты</a>
                                     </li>
                                     <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-799">
-                                        <a href="kursy.html" class="elementor-item elementor-item-active">Курсы</a>
+                                        <a href="kursy.html"
+                                            class="elementor-item elementor-item-active">Курсы</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -1079,7 +1081,7 @@
                                     <div style="margin-top: 5px; font-size: 14px;">от 1813 ₽ / мес.</div>
                                 </div>
                             </div>
-
+                            
                             <style>
                                 .custom-btn {
                                     margin: 5px 0 0 0;
@@ -1093,14 +1095,14 @@
                                     cursor: pointer;
                                     transition: all 0.3s ease;
                                 }
-
+                            
                                 .custom-btn:hover {
                                     color: #5c0d0d !important;
                                     background-color: #fff;
                                     border-color: #5c0d0d !important;
                                 }
                             </style>
-
+                            
 
                         </div>
                     </div>
@@ -1497,522 +1499,517 @@
 
 
 
-                <!-- Модальное окно -->
-                <div id="buyNowModal" class="modal" style="display:none;">
-                    <div class="wrapper-modal">
-                        <div class="modal-content">
-                            <span class="close" id="closeModal">&times;</span>
-                            <h2>Введите данные</h2>
-                            <div class="chat-body">
-                                <form class="elementor-form" method="post" id="form" name="Напишите нам">
-                                    <input type="hidden" name="access_key" value="c095b85a-cdb7-4cbd-bf3f-c4a5ba86f247">
-                                    <div class="elementor-form-fields-wrapper elementor-labels-above">
-                                        <div
-                                            class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-100 elementor-field-required elementor-mark-required">
-                                            <label for="form-field-name" class="elementor-field-label">Имя</label>
-                                            <input size="1" type="text" name="[Запись на курс Тревога] - Имя:"
-                                                id="form-field-name"
-                                                class="elementor-field elementor-size-md elementor-field-textual"
-                                                placeholder="Имя" required="required" aria-required="true">
-                                        </div>
-                                        <div
-                                            class="elementor-field-type-tel elementor-field-group elementor-column elementor-field-group-field_62b03d1 elementor-col-100 elementor-field-required elementor-mark-required">
-                                            <label for="form-field-field_62b03d1"
-                                                class="elementor-field-label">Телефон</label>
-                                            <input size="1" type="tel" name="[Запись на курс Тревога] - Телефон"
-                                                id="form-field-field_62b03d1"
-                                                class="elementor-field elementor-size-md elementor-field-textual"
-                                                placeholder="Ваш номер телефона" required="required"
-                                                aria-required="true" pattern="[0-9()#&amp;+*-=.]+"
-                                                title="Only numbers and phone characters (#, -, *, etc) are accepted.">
-                                        </div>
-                                        <div
-                                            class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
-                                            <button id="submitBtn"
-                                                style="height: 40px; display: flex; align-items: center;" type="submit"
-                                                class="elementor-button elementor-size-md">
-                                                <span>
-                                                    <span class="elementor-align-icon-left elementor-button-icon">
-                                                        <svg aria-hidden="true" class="e-font-icon-svg e-far-edit"
-                                                            viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
-                                                            <path
-                                                                d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z">
-                                                            </path>
-                                                        </svg>
-                                                    </span>
-                                                    <span class="elementor-button-text">Отправить</span>
-                                                    <div id="notification" style="display: none;">
-                                                        Перенаправление на страницу оплаты...</div>
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                                <style>
-                                    #notification {
-                                        position: fixed;
-                                        /* Changed to fixed to center on the entire screen */
-                                        top: 50%;
-                                        /* Center vertically */
-                                        left: 50%;
-                                        /* Center horizontally */
-                                        transform: translate(-50%, -50%);
-                                        /* Adjust position to center */
-                                        background-color: #808080;
-                                        /* Gray background */
-                                        color: white;
-                                        padding: 20px 40px;
-                                        /* Increased padding */
-                                        border-radius: 5px;
-                                        z-index: 1000;
-                                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                                        font-size: 16px;
-                                        display: none;
-                                        /* Make sure it's hidden by default */
-                                    }
+                                <!-- Модальное окно -->
+                                <div id="buyNowModal" class="modal" style="display:none;">
+                                    <div class="wrapper-modal">
+                                        <div class="modal-content">
+                                            <span class="close" id="closeModal">&times;</span>
+                                            <h2>Введите данные</h2>
+                                            <div class="chat-body">
+                                                <form class="elementor-form" method="post" id="form"
+                                                    name="Напишите нам">
+                                                    <input type="hidden" name="access_key"
+                                                        value="c095b85a-cdb7-4cbd-bf3f-c4a5ba86f247">
+                                                    <div class="elementor-form-fields-wrapper elementor-labels-above">
+                                                        <div
+                                                            class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-100 elementor-field-required elementor-mark-required">
+                                                            <label for="form-field-name"
+                                                                class="elementor-field-label">Имя</label>
+                                                            <input size="1" type="text"
+                                                                name="[Запись на курс Тревога] - Имя:"
+                                                                id="form-field-name"
+                                                                class="elementor-field elementor-size-md elementor-field-textual"
+                                                                placeholder="Имя" required="required"
+                                                                aria-required="true">
+                                                        </div>
+                                                        <div
+                                                            class="elementor-field-type-tel elementor-field-group elementor-column elementor-field-group-field_62b03d1 elementor-col-100 elementor-field-required elementor-mark-required">
+                                                            <label for="form-field-field_62b03d1"
+                                                                class="elementor-field-label">Телефон</label>
+                                                            <input size="1" type="tel"
+                                                                name="[Запись на курс Тревога] - Телефон"
+                                                                id="form-field-field_62b03d1"
+                                                                class="elementor-field elementor-size-md elementor-field-textual"
+                                                                placeholder="Ваш номер телефона" required="required"
+                                                                aria-required="true" pattern="[0-9()#&amp;+*-=.]+"
+                                                                title="Only numbers and phone characters (#, -, *, etc) are accepted.">
+                                                        </div>
+                                                        <div
+                                                            class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
+                                                            <button id="submitBtn"
+                                                                style="height: 40px; display: flex; align-items: center;"
+                                                                type="submit"
+                                                                class="elementor-button elementor-size-md">
+                                                                <span>
+                                                                    <span
+                                                                        class="elementor-align-icon-left elementor-button-icon">
+                                                                        <svg aria-hidden="true"
+                                                                            class="e-font-icon-svg e-far-edit"
+                                                                            viewBox="0 0 576 512"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z">
+                                                                            </path>
+                                                                        </svg>
+                                                                    </span>
+                                                                    <span class="elementor-button-text">Отправить</span>
+                                                                    <div id="notification" style="display: none;">
+                                                                        Перенаправление на страницу оплаты...</div>
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <style>
+                                                    #notification {
+                                                        position: fixed;
+                                                        /* Changed to fixed to center on the entire screen */
+                                                        top: 50%;
+                                                        /* Center vertically */
+                                                        left: 50%;
+                                                        /* Center horizontally */
+                                                        transform: translate(-50%, -50%);
+                                                        /* Adjust position to center */
+                                                        background-color: #808080;
+                                                        /* Gray background */
+                                                        color: white;
+                                                        padding: 20px 40px;
+                                                        /* Increased padding */
+                                                        border-radius: 5px;
+                                                        z-index: 1000;
+                                                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                                                        font-size: 16px;
+                                                        display: none;
+                                                        /* Make sure it's hidden by default */
+                                                    }
 
-                                    .elementor-field-label {
-                                        margin-bottom: 5px;
-                                    }
-                                </style>
-                                <!-- Result Message Element -->
-                                <div id="result" style="display: none;"></div>
-                                <script>
-                                    const form = document.getElementById('form');
-                                    const notification = document.getElementById('notification'); // Уведомление
-                                    let courseType = '';
-                                    let courseLink = ''; // Хранит ссылку для Robokassa
-
-                                    // Обработчики событий для кнопок
-                                    document.getElementById('new_buyNowButtonMassage').addEventListener('click', function () {
-                                        courseType = 'С массажем';
-                                        courseLink = this.dataset.link; // Сохраняем ссылку из data-link
-                                    });
-                                    document.getElementById('new_buyNowButtonNoMassage').addEventListener('click', function () {
-                                        courseType = 'Без массажа';
-                                        courseLink = this.dataset.link; // Сохраняем ссылку из data-link
-                                    });
-
-                                    form.addEventListener('submit', function (e) {
-                                        e.preventDefault();
-
-                                        const name = document.getElementById('form-field-name').value.trim();
-                                        const phone = document.getElementById('form-field-field_62b03d1').value.trim();
-
-                                        if (!name || !phone || !courseType) {
-                                            alert('Пожалуйста, заполните все обязательные поля и выберите тип курса.');
-                                            return;
-                                        }
-
-                                        const formattedMessage = `Запись на курс «Здоровая спина»\n-----\nТип курса: ${courseType}\nИмя: ${name}\nТелефон: ${phone}`;
-
-                                        fetch('https://api.telegram.org/bot8162513641:AAGbyFDIZ5dPSrRBtXXzusB_8k3M8cIgXvw/sendMessage', {
-                                            method: 'POST',
-                                            headers: {
-                                                'Content-Type': 'application/json',
-                                            },
-                                            body: JSON.stringify({
-                                                chat_id: '-1002260812823',
-                                                text: formattedMessage,
-                                            }),
-                                        })
-                                            .then(response => response.json())
-                                            .then(data => {
-                                                console.log('Ответ от Telegram:', data);
-                                                if (data.ok) {
-                                                    notification.style.display = 'block';
-                                                    // Immediately hide the notification without delay
-                                                    notification.style.display = 'none';
-
-                                                    form.reset();
-
-                                                    // Create a temporary link and trigger a click event to open it in a new tab
-                                                    const link = document.createElement('a');
-                                                    link.href = courseLink;
-                                                    link.target = '_blank';
-                                                    document.body.appendChild(link);
-                                                    link.click();
-                                                    document.body.removeChild(link); // Clean up by removing the temporary link
-                                                } else {
-                                                    console.error('Ошибка при отправке сообщения:', data);
-                                                    alert('Ошибка при отправке сообщения.');
-                                                }
-                                            })
-                                            .catch(error => {
-                                                console.error('Ошибка:', error);
-                                                alert('Ошибка подключения к Telegram API.');
-                                            });
-                                    });
-                                </script>
-
-                                <div id="redirectPopup" class="new_popup" style="display:none;">
-                                    <p>Перенаправление на страницу оплаты...</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <script src="../js/kursy-modal.js?ver=2.1.0"></script>
-
-
-
-                    <div style="display: flex; justify-content: center;">
-                        <button id="showButton">Показать завершённые курсы</button>
-                    </div>
-
-                    <style>
-                        .hidden {
-                            display: none;
-                        }
-                    </style>
-
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function () {
-                            const toggleButton = document.getElementById('showButton'); // Updated to match the button ID
-                            const hiddenElements = document.querySelectorAll('.hidden');
-
-                            toggleButton.addEventListener('click', function () {
-                                hiddenElements.forEach(element => {
-                                    // Toggle visibility
-                                    if (element.style.display === 'block') {
-                                        element.style.display = 'none';
-                                        toggleButton.textContent = 'Показать завершённые курсы'; // Change button text to "Показать"
-                                    } else {
-                                        element.style.display = 'block';
-                                        toggleButton.textContent = 'Скрыть завершённые курсы'; // Change button text to "Скрыть"
-                                    }
-                                });
-                            });
-                        });
-                    </script>
-
-
-
-                    <div class="elementor-element elementor-element-2ef25b57 e-flex e-con-boxed e-con e-parent"
-                        data-id="2ef25b57" data-element_type="container"
-                        data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;content_width&quot;:&quot;boxed&quot;}"
-                        data-core-v316-plus="true">
-                        <div class="e-con-inner">
-                            <div class="elementor-element elementor-element-33fdc62 e-con-full e-flex e-con e-child"
-                                data-id="33fdc62" data-element_type="container"
-                                data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
-                                <div class="elementor-element elementor-element-6364112 elementor-position-top elementor-widget elementor-widget-image-box"
-                                    data-id="6364112" data-element_type="widget" data-widget_type="image-box.default">
-                                    <div class="elementor-widget-container">
-                                        <style>
-                                            /*! elementor - v3.18.0 - 06-12-2023 */
-                                            .elementor-widget-image-box .elementor-image-box-content {
-                                                width: 100%
-                                            }
-
-                                            @media (min-width:768px) {
-
-                                                .elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper,
-                                                .elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper {
-                                                    display: flex
-                                                }
-
-                                                .elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper {
-                                                    text-align: right;
-                                                    flex-direction: row-reverse
-                                                }
-
-                                                .elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper {
-                                                    text-align: left;
-                                                    flex-direction: row
-                                                }
-
-                                                .elementor-widget-image-box.elementor-position-top .elementor-image-box-img {
-                                                    margin: auto
-                                                }
-
-                                                .elementor-widget-image-box.elementor-vertical-align-top .elementor-image-box-wrapper {
-                                                    align-items: flex-start
-                                                }
-
-                                                .elementor-widget-image-box.elementor-vertical-align-middle .elementor-image-box-wrapper {
-                                                    align-items: center
-                                                }
-
-                                                .elementor-widget-image-box.elementor-vertical-align-bottom .elementor-image-box-wrapper {
-                                                    align-items: flex-end
-                                                }
-                                            }
-
-                                            @media (max-width:767px) {
-                                                .elementor-widget-image-box .elementor-image-box-img {
-                                                    margin-left: auto !important;
-                                                    margin-right: auto !important;
-                                                    margin-bottom: 15px
-                                                }
-                                            }
-
-                                            .elementor-widget-image-box .elementor-image-box-img {
-                                                display: inline-block
-                                            }
-
-                                            .elementor-widget-image-box .elementor-image-box-title a {
-                                                color: inherit
-                                            }
-
-                                            .elementor-widget-image-box .elementor-image-box-wrapper {
-                                                text-align: center
-                                            }
-
-                                            .elementor-widget-image-box .elementor-image-box-description {
-                                                margin: 0
-                                            }
-                                        </style>
-                                        <div class="elementor-image-box-wrapper">
-                                            <figure class="elementor-image-box-img"><img decoding="async" width="300"
-                                                    height="300" src="../wp-content/uploads/2023/12/5-1-300x300.png"
-                                                    class="attachment-medium size-medium wp-image-654"
-                                                    alt="Логотип йога пипл" sizes="(max-width: 300px) 100vw, 300px" />
-                                            </figure>
-                                            <div class="elementor-image-box-content"><span
-                                                    class="elementor-image-box-title">YogaPeople</span>
-                                                <p class="elementor-image-box-description">Сеть студий йоги и массажа в
-                                                    СПБ
-                                                </p>
+                                                    .elementor-field-label {
+                                                        margin-bottom: 5px;
+                                                    }
+                                                </style>
+                                                <!-- Result Message Element -->
+                                                <div id="result" style="display: none;"></div>
+                                                <script>
+                                                    const form = document.getElementById('form');
+                                                    const notification = document.getElementById('notification'); // Уведомление
+                                                    let courseType = '';
+                                                    let courseLink = ''; // Хранит ссылку для Robokassa
+                                                
+                                                    // Обработчики событий для кнопок
+                                                    document.getElementById('new_buyNowButtonMassage').addEventListener('click', function () {
+                                                        courseType = 'С массажем';
+                                                        courseLink = this.dataset.link; // Сохраняем ссылку из data-link
+                                                    });
+                                                    document.getElementById('new_buyNowButtonNoMassage').addEventListener('click', function () {
+                                                        courseType = 'Без массажа';
+                                                        courseLink = this.dataset.link; // Сохраняем ссылку из data-link
+                                                    });
+                                                
+                                                    form.addEventListener('submit', function (e) {
+                                                        e.preventDefault();
+                                                
+                                                        const name = document.getElementById('form-field-name').value.trim();
+                                                        const phone = document.getElementById('form-field-field_62b03d1').value.trim();
+                                                
+                                                        if (!name || !phone || !courseType) {
+                                                            alert('Пожалуйста, заполните все обязательные поля и выберите тип курса.');
+                                                            return;
+                                                        }
+                                                
+                                                        const formattedMessage = `Запись на курс «Здоровая спина»\n-----\nТип курса: ${courseType}\nИмя: ${name}\nТелефон: ${phone}`;
+                                                
+                                                        fetch('https://api.telegram.org/bot8162513641:AAGbyFDIZ5dPSrRBtXXzusB_8k3M8cIgXvw/sendMessage', {
+                                                            method: 'POST',
+                                                            headers: {
+                                                                'Content-Type': 'application/json',
+                                                            },
+                                                            body: JSON.stringify({
+                                                                chat_id: '-1002260812823', 
+                                                                text: formattedMessage,
+                                                            }),
+                                                        })
+                                                        .then(response => response.json())
+                                                        .then(data => {
+                                                            console.log('Ответ от Telegram:', data);
+                                                            if (data.ok) {
+                                                                notification.style.display = 'block';
+                                                                setTimeout(() => {
+                                                                    notification.style.display = 'none';
+                                                                }, 3000);
+                                                
+                                                                form.reset();
+                                                                window.open(courseLink, '_blank'); // Открываем сохраненную ссылку
+                                                            } else {
+                                                                console.error('Ошибка при отправке сообщения:', data);
+                                                                alert('Ошибка при отправке сообщения.');
+                                                            }
+                                                        })
+                                                        .catch(error => {
+                                                            console.error('Ошибка:', error);
+                                                            alert('Ошибка подключения к Telegram API.');
+                                                        });
+                                                    });
+                                                </script>
+                                                
+                                            </div>
+                                            <div id="redirectPopup" class="new_popup" style="display:none;">
+                                                <p>Перенаправление на страницу оплаты...</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="elementor-element elementor-element-1aaaa2f3 e-grid-align-left e-grid-align-tablet-left e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons"
-                                    data-id="1aaaa2f3" data-element_type="widget"
-                                    data-widget_type="social-icons.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="elementor-social-icons-wrapper elementor-grid">
-                                            <span class="elementor-grid-item">
-                                                <a class="elementor-icon elementor-social-icon elementor-social-icon-vk elementor-repeater-item-62db7d4"
-                                                    href="https://vk.com/yogapeople" target="_blank">
-                                                    <span class="elementor-screen-only">Vk</span>
-                                                    <svg class="e-font-icon-svg e-fab-vk" viewBox="0 0 576 512"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 73.1-72.4 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.2-21.7-16.6-21.7h-92.6c-9.4 0-15 7-15 13.5 0 14.2 21.2 17.5 23.4 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.6-73.4-97.4-157.4-5.8-16.3-11.5-22.9-26.6-22.9H38.8c-16.8 0-20.2 7.9-20.2 16.7 0 15.6 20 93.1 93.1 195.5C160.4 378.1 229 416 291.4 416c37.5 0 42.1-8.4 42.1-22.9 0-66.8-3.4-73.1 15.4-73.1 8.7 0 23.7 4.4 58.7 38.1 40 40 46.6 57.9 69 57.9h58.9c16.8 0 25.3-8.4 20.4-25-11.2-34.9-86.9-106.7-90.3-111.5-8.7-11.2-6.2-16.2 0-26.2.1-.1 72-101.3 79.4-135.6z">
-                                                        </path>
-                                                    </svg> </a>
-                                            </span>
-                                            <span class="elementor-grid-item">
-                                                <a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-d765963"
-                                                    href="../../www.youtube.com/%40yogapeople_spb.html" target="_blank">
-                                                    <span class="elementor-screen-only">Youtube</span>
-                                                    <svg class="e-font-icon-svg e-fab-youtube" viewBox="0 0 576 512"
-                                                        xmlns="../../www.w3.org/2000/svg.html">
-                                                        <path
-                                                            d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
-                                                        </path>
-                                                    </svg> </a>
-                                            </span>
+                                <script src="../js/kursy-modal.js?ver=2.1.0"></script>
+
+
+
+                <div style="display: flex; justify-content: center;">
+                    <button id="showButton">Показать завершённые курсы</button>
+                </div>
+
+                <style>
+                    .hidden {
+                        display: none;
+                    }
+                </style>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const toggleButton = document.getElementById('showButton'); // Updated to match the button ID
+                        const hiddenElements = document.querySelectorAll('.hidden');
+
+                        toggleButton.addEventListener('click', function () {
+                            hiddenElements.forEach(element => {
+                                // Toggle visibility
+                                if (element.style.display === 'block') {
+                                    element.style.display = 'none';
+                                    toggleButton.textContent = 'Показать завершённые курсы'; // Change button text to "Показать"
+                                } else {
+                                    element.style.display = 'block';
+                                    toggleButton.textContent = 'Скрыть завершённые курсы'; // Change button text to "Скрыть"
+                                }
+                            });
+                        });
+                    });
+                </script>
+
+
+
+                <div class="elementor-element elementor-element-2ef25b57 e-flex e-con-boxed e-con e-parent"
+                    data-id="2ef25b57" data-element_type="container"
+                    data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;content_width&quot;:&quot;boxed&quot;}"
+                    data-core-v316-plus="true">
+                    <div class="e-con-inner">
+                        <div class="elementor-element elementor-element-33fdc62 e-con-full e-flex e-con e-child"
+                            data-id="33fdc62" data-element_type="container"
+                            data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+                            <div class="elementor-element elementor-element-6364112 elementor-position-top elementor-widget elementor-widget-image-box"
+                                data-id="6364112" data-element_type="widget" data-widget_type="image-box.default">
+                                <div class="elementor-widget-container">
+                                    <style>
+                                        /*! elementor - v3.18.0 - 06-12-2023 */
+                                        .elementor-widget-image-box .elementor-image-box-content {
+                                            width: 100%
+                                        }
+
+                                        @media (min-width:768px) {
+
+                                            .elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper,
+                                            .elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper {
+                                                display: flex
+                                            }
+
+                                            .elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper {
+                                                text-align: right;
+                                                flex-direction: row-reverse
+                                            }
+
+                                            .elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper {
+                                                text-align: left;
+                                                flex-direction: row
+                                            }
+
+                                            .elementor-widget-image-box.elementor-position-top .elementor-image-box-img {
+                                                margin: auto
+                                            }
+
+                                            .elementor-widget-image-box.elementor-vertical-align-top .elementor-image-box-wrapper {
+                                                align-items: flex-start
+                                            }
+
+                                            .elementor-widget-image-box.elementor-vertical-align-middle .elementor-image-box-wrapper {
+                                                align-items: center
+                                            }
+
+                                            .elementor-widget-image-box.elementor-vertical-align-bottom .elementor-image-box-wrapper {
+                                                align-items: flex-end
+                                            }
+                                        }
+
+                                        @media (max-width:767px) {
+                                            .elementor-widget-image-box .elementor-image-box-img {
+                                                margin-left: auto !important;
+                                                margin-right: auto !important;
+                                                margin-bottom: 15px
+                                            }
+                                        }
+
+                                        .elementor-widget-image-box .elementor-image-box-img {
+                                            display: inline-block
+                                        }
+
+                                        .elementor-widget-image-box .elementor-image-box-title a {
+                                            color: inherit
+                                        }
+
+                                        .elementor-widget-image-box .elementor-image-box-wrapper {
+                                            text-align: center
+                                        }
+
+                                        .elementor-widget-image-box .elementor-image-box-description {
+                                            margin: 0
+                                        }
+                                    </style>
+                                    <div class="elementor-image-box-wrapper">
+                                        <figure class="elementor-image-box-img"><img decoding="async" width="300"
+                                                height="300" src="../wp-content/uploads/2023/12/5-1-300x300.png"
+                                                class="attachment-medium size-medium wp-image-654"
+                                                alt="Логотип йога пипл" sizes="(max-width: 300px) 100vw, 300px" />
+                                        </figure>
+                                        <div class="elementor-image-box-content"><span
+                                                class="elementor-image-box-title">YogaPeople</span>
+                                            <p class="elementor-image-box-description">Сеть студий йоги и массажа в СПБ
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="elementor-element elementor-element-eed47b4 e-con-full e-flex e-con e-child"
-                                data-id="eed47b4" data-element_type="container"
-                                data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
-                                <div class="elementor-element elementor-element-29a04b2e elementor-widget elementor-widget-heading"
-                                    data-id="29a04b2e" data-element_type="widget" data-widget_type="heading.default">
-                                    <div class="elementor-widget-container">
-                                        <h6 class="elementor-heading-title elementor-size-default">Ссылки</h6>
-                                    </div>
-                                </div>
-                                <div class="elementor-element elementor-element-67d7f5e6 elementor-nav-menu--dropdown-none elementor-widget elementor-widget-nav-menu"
-                                    data-id="67d7f5e6" data-element_type="widget"
-                                    data-settings="{&quot;layout&quot;:&quot;vertical&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;svg class=\&quot;e-font-icon-svg e-fas-caret-down\&quot; viewBox=\&quot;0 0 320 512\&quot; xmlns=\&quot;http:\/\/www.w3.org\/2000\/svg\&quot;&gt;&lt;path d=\&quot;M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z\&quot;&gt;&lt;\/path&gt;&lt;\/svg&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;}}"
-                                    data-widget_type="nav-menu.default">
-                                    <div class="elementor-widget-container">
-                                        <nav
-                                            class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
-                                            <ul id="menu-1-67d7f5e6" class="elementor-nav-menu sm-vertical">
-                                                <li
-                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-795">
-                                                    <a href="o-nas.html" class="elementor-item">O нас</a>
-                                                </li>
-                                                <li
-                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-794">
-                                                    <a href="uslugi.html" class="elementor-item">Услуги</a>
-                                                </li>
-                                                <li
-                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-797">
-                                                    <a href="raspisanie.html" class="elementor-item">Расписание</a>
-                                                </li>
-                                                <li
-                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-796">
-                                                    <a href="czena-zanyatij.html" class="elementor-item">Цены</a>
-                                                </li>
-                                                <li
-                                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-434 current_page_item menu-item-798">
-                                                    <a href="kontakty.html" aria-current="page"
-                                                        class="elementor-item">Контакты</a>
-                                                </li>
-                                                <li
-                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-799">
-                                                    <a href="kursy.html"
-                                                        class="elementor-item elementor-item-active">Курсы</a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                        <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container"
-                                            aria-hidden="true">
-                                            <ul id="menu-2-67d7f5e6" class="elementor-nav-menu sm-vertical">
-                                                <li
-                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-795">
-                                                    <a href="o-nas.html" class="elementor-item" tabindex="-1">O
-                                                        нас</a>
-                                                </li>
-                                                <li
-                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-794">
-                                                    <a href="uslugi.html" class="elementor-item"
-                                                        tabindex="-1">Услуги</a>
-                                                </li>
-                                                <li
-                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-797">
-                                                    <a href="raspisanie.html" class="elementor-item"
-                                                        tabindex="-1">Расписание</a>
-                                                </li>
-                                                <li
-                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-796">
-                                                    <a href="czena-zanyatij.html" class="elementor-item"
-                                                        tabindex="-1">Цены</a>
-                                                </li>
-                                                <li
-                                                    class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-434 current_page_item menu-item-798">
-                                                    <a href="kontakty.html" aria-current="page" class="elementor-item"
-                                                        tabindex="-1">Контакты</a>
-                                                </li>
-                                                <li
-                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-799">
-                                                    <a href="kursy.html"
-                                                        class="elementor-item elementor-item-active">Курсы</a>
-                                                </li>
-                                            </ul>
-                                        </nav>
+                            <div class="elementor-element elementor-element-1aaaa2f3 e-grid-align-left e-grid-align-tablet-left e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons"
+                                data-id="1aaaa2f3" data-element_type="widget" data-widget_type="social-icons.default">
+                                <div class="elementor-widget-container">
+                                    <div class="elementor-social-icons-wrapper elementor-grid">
+                                        <span class="elementor-grid-item">
+                                            <a class="elementor-icon elementor-social-icon elementor-social-icon-vk elementor-repeater-item-62db7d4"
+                                                href="https://vk.com/yogapeople" target="_blank">
+                                                <span class="elementor-screen-only">Vk</span>
+                                                <svg class="e-font-icon-svg e-fab-vk" viewBox="0 0 576 512"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 73.1-72.4 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.2-21.7-16.6-21.7h-92.6c-9.4 0-15 7-15 13.5 0 14.2 21.2 17.5 23.4 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.6-73.4-97.4-157.4-5.8-16.3-11.5-22.9-26.6-22.9H38.8c-16.8 0-20.2 7.9-20.2 16.7 0 15.6 20 93.1 93.1 195.5C160.4 378.1 229 416 291.4 416c37.5 0 42.1-8.4 42.1-22.9 0-66.8-3.4-73.1 15.4-73.1 8.7 0 23.7 4.4 58.7 38.1 40 40 46.6 57.9 69 57.9h58.9c16.8 0 25.3-8.4 20.4-25-11.2-34.9-86.9-106.7-90.3-111.5-8.7-11.2-6.2-16.2 0-26.2.1-.1 72-101.3 79.4-135.6z">
+                                                    </path>
+                                                </svg> </a>
+                                        </span>
+                                        <span class="elementor-grid-item">
+                                            <a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-d765963"
+                                                href="../../www.youtube.com/%40yogapeople_spb.html" target="_blank">
+                                                <span class="elementor-screen-only">Youtube</span>
+                                                <svg class="e-font-icon-svg e-fab-youtube" viewBox="0 0 576 512"
+                                                    xmlns="../../www.w3.org/2000/svg.html">
+                                                    <path
+                                                        d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                                                    </path>
+                                                </svg> </a>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="elementor-element elementor-element-2330349a e-con-full e-flex e-con e-child"
-                                data-id="2330349a" data-element_type="container"
-                                data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
-                                <div class="elementor-element elementor-element-4ee5daa2 elementor-widget elementor-widget-heading"
-                                    data-id="4ee5daa2" data-element_type="widget" data-widget_type="heading.default">
-                                    <div class="elementor-widget-container">
-                                        <h6 class="elementor-heading-title elementor-size-default">Контакты</h6>
-                                    </div>
+                        </div>
+                        <div class="elementor-element elementor-element-eed47b4 e-con-full e-flex e-con e-child"
+                            data-id="eed47b4" data-element_type="container"
+                            data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+                            <div class="elementor-element elementor-element-29a04b2e elementor-widget elementor-widget-heading"
+                                data-id="29a04b2e" data-element_type="widget" data-widget_type="heading.default">
+                                <div class="elementor-widget-container">
+                                    <h6 class="elementor-heading-title elementor-size-default">Ссылки</h6>
                                 </div>
-                                <div class="elementor-element elementor-element-41e27ab7 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-                                    data-id="41e27ab7" data-element_type="widget" data-widget_type="icon-list.default">
-                                    <div class="elementor-widget-container">
-                                        <ul class="elementor-icon-list-items">
-                                            <li class="elementor-icon-list-item">
-                                                <a href="tel:+79219417951">
-
-                                                    <span class="elementor-icon-list-icon">
-                                                        <svg aria-hidden="true" class="e-font-icon-svg e-fas-phone-alt"
-                                                            viewBox="0 0 512 512"
-                                                            xmlns="../../www.w3.org/2000/svg.html">
-                                                            <path
-                                                                d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z">
-                                                            </path>
-                                                        </svg> </span>
-                                                    <span class="elementor-icon-list-text">Тел: +7 (812)
-                                                        941-79-51</span>
-                                                </a>
+                            </div>
+                            <div class="elementor-element elementor-element-67d7f5e6 elementor-nav-menu--dropdown-none elementor-widget elementor-widget-nav-menu"
+                                data-id="67d7f5e6" data-element_type="widget"
+                                data-settings="{&quot;layout&quot;:&quot;vertical&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;svg class=\&quot;e-font-icon-svg e-fas-caret-down\&quot; viewBox=\&quot;0 0 320 512\&quot; xmlns=\&quot;http:\/\/www.w3.org\/2000\/svg\&quot;&gt;&lt;path d=\&quot;M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z\&quot;&gt;&lt;\/path&gt;&lt;\/svg&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;}}"
+                                data-widget_type="nav-menu.default">
+                                <div class="elementor-widget-container">
+                                    <nav
+                                        class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
+                                        <ul id="menu-1-67d7f5e6" class="elementor-nav-menu sm-vertical">
+                                            <li
+                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-795">
+                                                <a href="o-nas.html" class="elementor-item">O нас</a>
                                             </li>
-                                            <li class="elementor-icon-list-item">
-                                                <span class="elementor-icon-list-icon">
-                                                    <svg aria-hidden="true" class="e-font-icon-svg e-fas-map-marker-alt"
-                                                        viewBox="0 0 384 512" xmlns="../../www.w3.org/2000/svg.html">
-                                                        <path
-                                                            d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z">
-                                                        </path>
-                                                    </svg> </span>
-                                                <span class="elementor-icon-list-text">Шлиссельбургский пр, 37</span>
+                                            <li
+                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-794">
+                                                <a href="uslugi.html" class="elementor-item">Услуги</a>
                                             </li>
-                                            <li class="elementor-icon-list-item">
-                                                <span class="elementor-icon-list-icon">
-                                                    <svg aria-hidden="true" class="e-font-icon-svg e-fas-map-marker-alt"
-                                                        viewBox="0 0 384 512" xmlns="../../www.w3.org/2000/svg.html">
-                                                        <path
-                                                            d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z">
-                                                        </path>
-                                                    </svg> </span>
-                                                <span class="elementor-icon-list-text">Ново-Александровская ул,
-                                                    14</span>
+                                            <li
+                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-797">
+                                                <a href="raspisanie.html" class="elementor-item">Расписание</a>
                                             </li>
-                                            <li class="elementor-icon-list-item">
-                                                <a href="mailto:contact@mysite.com">
-
-                                                    <span class="elementor-icon-list-icon">
-                                                        <svg aria-hidden="true" class="e-font-icon-svg e-fas-envelope"
-                                                            viewBox="0 0 512 512"
-                                                            xmlns="../../www.w3.org/2000/svg.html">
-                                                            <path
-                                                                d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z">
-                                                            </path>
-                                                        </svg> </span>
-                                                    <span class="elementor-icon-list-text">Email:
-                                                        yogapeople@mail.ru</span>
-                                                </a>
+                                            <li
+                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-796">
+                                                <a href="czena-zanyatij.html" class="elementor-item">Цены</a>
+                                            </li>
+                                            <li
+                                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-434 current_page_item menu-item-798">
+                                                <a href="kontakty.html" aria-current="page"
+                                                    class="elementor-item">Контакты</a>
+                                            </li>
+                                            <li
+                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-799">
+                                                <a href="kursy.html"
+                                                    class="elementor-item elementor-item-active">Курсы</a>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </nav>
+                                    <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container"
+                                        aria-hidden="true">
+                                        <ul id="menu-2-67d7f5e6" class="elementor-nav-menu sm-vertical">
+                                            <li
+                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-795">
+                                                <a href="o-nas.html" class="elementor-item" tabindex="-1">O
+                                                    нас</a>
+                                            </li>
+                                            <li
+                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-794">
+                                                <a href="uslugi.html" class="elementor-item"
+                                                    tabindex="-1">Услуги</a>
+                                            </li>
+                                            <li
+                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-797">
+                                                <a href="raspisanie.html" class="elementor-item"
+                                                    tabindex="-1">Расписание</a>
+                                            </li>
+                                            <li
+                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-796">
+                                                <a href="czena-zanyatij.html" class="elementor-item"
+                                                    tabindex="-1">Цены</a>
+                                            </li>
+                                            <li
+                                                class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-434 current_page_item menu-item-798">
+                                                <a href="kontakty.html" aria-current="page"
+                                                    class="elementor-item" tabindex="-1">Контакты</a>
+                                            </li>
+                                            <li
+                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-799">
+                                                <a href="kursy.html"
+                                                    class="elementor-item elementor-item-active">Курсы</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
                                 </div>
-                                <div class="elementor-element elementor-element-3e4abd3c e-grid-align-left e-grid-align-tablet-left e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons"
-                                    data-id="3e4abd3c" data-element_type="widget"
-                                    data-widget_type="social-icons.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="elementor-social-icons-wrapper elementor-grid">
-                                            <span class="elementor-grid-item">
-                                                <a class="elementor-icon elementor-social-icon elementor-social-icon-vk elementor-repeater-item-62db7d4"
-                                                    href="https://vk.com/yogapeople" target="_blank">
-                                                    <span class="elementor-screen-only">Vk</span>
-                                                    <svg class="e-font-icon-svg e-fab-vk" viewBox="0 0 576 512"
-                                                        xmlns="../../www.w3.org/2000/svg.html">
+                            </div>
+                        </div>
+                        <div class="elementor-element elementor-element-2330349a e-con-full e-flex e-con e-child"
+                            data-id="2330349a" data-element_type="container"
+                            data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+                            <div class="elementor-element elementor-element-4ee5daa2 elementor-widget elementor-widget-heading"
+                                data-id="4ee5daa2" data-element_type="widget" data-widget_type="heading.default">
+                                <div class="elementor-widget-container">
+                                    <h6 class="elementor-heading-title elementor-size-default">Контакты</h6>
+                                </div>
+                            </div>
+                            <div class="elementor-element elementor-element-41e27ab7 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+                                data-id="41e27ab7" data-element_type="widget" data-widget_type="icon-list.default">
+                                <div class="elementor-widget-container">
+                                    <ul class="elementor-icon-list-items">
+                                        <li class="elementor-icon-list-item">
+                                            <a href="tel:+79219417951">
+
+                                                <span class="elementor-icon-list-icon">
+                                                    <svg aria-hidden="true" class="e-font-icon-svg e-fas-phone-alt"
+                                                        viewBox="0 0 512 512" xmlns="../../www.w3.org/2000/svg.html">
                                                         <path
-                                                            d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 73.1-72.4 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.2-21.7-16.6-21.7h-92.6c-9.4 0-15 7-15 13.5 0 14.2 21.2 17.5 23.4 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.6-73.4-97.4-157.4-5.8-16.3-11.5-22.9-26.6-22.9H38.8c-16.8 0-20.2 7.9-20.2 16.7 0 15.6 20 93.1 93.1 195.5C160.4 378.1 229 416 291.4 416c37.5 0 42.1-8.4 42.1-22.9 0-66.8-3.4-73.1 15.4-73.1 8.7 0 23.7 4.4 58.7 38.1 40 40 46.6 57.9 69 57.9h58.9c16.8 0 25.3-8.4 20.4-25-11.2-34.9-86.9-106.7-90.3-111.5-8.7-11.2-6.2-16.2 0-26.2.1-.1 72-101.3 79.4-135.6z">
+                                                            d="M497.39 361.8l-112-48a24 24 0 0 0-28 6.9l-49.6 60.6A370.66 370.66 0 0 1 130.6 204.11l60.6-49.6a23.94 23.94 0 0 0 6.9-28l-48-112A24.16 24.16 0 0 0 122.6.61l-104 24A24 24 0 0 0 0 48c0 256.5 207.9 464 464 464a24 24 0 0 0 23.4-18.6l24-104a24.29 24.29 0 0 0-14.01-27.6z">
                                                         </path>
-                                                    </svg> </a>
-                                            </span>
-                                            <span class="elementor-grid-item">
-                                                <a class="elementor-icon elementor-social-icon elementor-social-icon-telegram elementor-repeater-item-5c0ce3c"
-                                                    href="https://t.me/Yogapeople_spb" target="_blank">
-                                                    <span class="elementor-screen-only">Telegram</span>
-                                                    <svg class="e-font-icon-svg e-fab-telegram" viewBox="0 0 496 512"
-                                                        xmlns="../../www.w3.org/2000/svg.html">
+                                                    </svg> </span>
+                                                <span class="elementor-icon-list-text">Тел: +7 (812) 941-79-51</span>
+                                            </a>
+                                        </li>
+                                        <li class="elementor-icon-list-item">
+                                            <span class="elementor-icon-list-icon">
+                                                <svg aria-hidden="true" class="e-font-icon-svg e-fas-map-marker-alt"
+                                                    viewBox="0 0 384 512" xmlns="../../www.w3.org/2000/svg.html">
+                                                    <path
+                                                        d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z">
+                                                    </path>
+                                                </svg> </span>
+                                            <span class="elementor-icon-list-text">Шлиссельбургский пр, 37</span>
+                                        </li>
+                                        <li class="elementor-icon-list-item">
+                                            <span class="elementor-icon-list-icon">
+                                                <svg aria-hidden="true" class="e-font-icon-svg e-fas-map-marker-alt"
+                                                    viewBox="0 0 384 512" xmlns="../../www.w3.org/2000/svg.html">
+                                                    <path
+                                                        d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z">
+                                                    </path>
+                                                </svg> </span>
+                                            <span class="elementor-icon-list-text">Ново-Александровская ул, 14</span>
+                                        </li>
+                                        <li class="elementor-icon-list-item">
+                                            <a href="mailto:contact@mysite.com">
+
+                                                <span class="elementor-icon-list-icon">
+                                                    <svg aria-hidden="true" class="e-font-icon-svg e-fas-envelope"
+                                                        viewBox="0 0 512 512" xmlns="../../www.w3.org/2000/svg.html">
                                                         <path
-                                                            d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                                                            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z">
                                                         </path>
-                                                    </svg> </a>
-                                            </span>
-                                            <span class="elementor-grid-item">
-                                                <a class="elementor-icon elementor-social-icon elementor-social-icon-whatsapp elementor-repeater-item-d765963"
-                                                    href="https://wa.me/7-921-941-79-51" target="_blank">
-                                                    <span class="elementor-screen-only">Whatsapp</span>
-                                                    <svg class="e-font-icon-svg e-fab-whatsapp" viewBox="0 0 448 512"
-                                                        xmlns="../../www.w3.org/2000/svg.html">
-                                                        <path
-                                                            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
-                                                        </path>
-                                                    </svg> </a>
-                                            </span>
-                                        </div>
+                                                    </svg> </span>
+                                                <span class="elementor-icon-list-text">Email: yogapeople@mail.ru</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="elementor-element elementor-element-3e4abd3c e-grid-align-left e-grid-align-tablet-left e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons"
+                                data-id="3e4abd3c" data-element_type="widget" data-widget_type="social-icons.default">
+                                <div class="elementor-widget-container">
+                                    <div class="elementor-social-icons-wrapper elementor-grid">
+                                        <span class="elementor-grid-item">
+                                            <a class="elementor-icon elementor-social-icon elementor-social-icon-vk elementor-repeater-item-62db7d4"
+                                                href="https://vk.com/yogapeople" target="_blank">
+                                                <span class="elementor-screen-only">Vk</span>
+                                                <svg class="e-font-icon-svg e-fab-vk" viewBox="0 0 576 512"
+                                                    xmlns="../../www.w3.org/2000/svg.html">
+                                                    <path
+                                                        d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 73.1-72.4 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.2-21.7-16.6-21.7h-92.6c-9.4 0-15 7-15 13.5 0 14.2 21.2 17.5 23.4 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.6-73.4-97.4-157.4-5.8-16.3-11.5-22.9-26.6-22.9H38.8c-16.8 0-20.2 7.9-20.2 16.7 0 15.6 20 93.1 93.1 195.5C160.4 378.1 229 416 291.4 416c37.5 0 42.1-8.4 42.1-22.9 0-66.8-3.4-73.1 15.4-73.1 8.7 0 23.7 4.4 58.7 38.1 40 40 46.6 57.9 69 57.9h58.9c16.8 0 25.3-8.4 20.4-25-11.2-34.9-86.9-106.7-90.3-111.5-8.7-11.2-6.2-16.2 0-26.2.1-.1 72-101.3 79.4-135.6z">
+                                                    </path>
+                                                </svg> </a>
+                                        </span>
+                                        <span class="elementor-grid-item">
+                                            <a class="elementor-icon elementor-social-icon elementor-social-icon-telegram elementor-repeater-item-5c0ce3c"
+                                                href="https://t.me/Yogapeople_spb" target="_blank">
+                                                <span class="elementor-screen-only">Telegram</span>
+                                                <svg class="e-font-icon-svg e-fab-telegram" viewBox="0 0 496 512"
+                                                    xmlns="../../www.w3.org/2000/svg.html">
+                                                    <path
+                                                        d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z">
+                                                    </path>
+                                                </svg> </a>
+                                        </span>
+                                        <span class="elementor-grid-item">
+                                            <a class="elementor-icon elementor-social-icon elementor-social-icon-whatsapp elementor-repeater-item-d765963"
+                                                href="https://wa.me/7-921-941-79-51" target="_blank">
+                                                <span class="elementor-screen-only">Whatsapp</span>
+                                                <svg class="e-font-icon-svg e-fab-whatsapp" viewBox="0 0 448 512"
+                                                    xmlns="../../www.w3.org/2000/svg.html">
+                                                    <path
+                                                        d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z">
+                                                    </path>
+                                                </svg> </a>
+                                        </span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="elementor-element elementor-element-2555c11e e-con-full e-flex e-con e-child"
-                                data-id="2555c11e" data-element_type="container"
-                                data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
-                                <div class="elementor-element elementor-element-11cb58c5 elementor-widget elementor-widget-google_maps"
-                                    data-id="11cb58c5" data-element_type="widget"
-                                    data-widget_type="google_maps.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="elementor-custom-embed">
-                                            <iframe loading="lazy"
-                                                src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac13f9333bd6e43ebd5da672cfee3332d9905b294eebb722bb114d81b59725a53&amp;source=constructor"
-                                                title="Санкт-ПетербкргШлиссельбургский проспект, 37"
-                                                aria-label="Санкт-ПетербкргШлиссельбургский проспект, 37"></iframe>
-                                        </div>
+                        </div>
+                        <div class="elementor-element elementor-element-2555c11e e-con-full e-flex e-con e-child"
+                            data-id="2555c11e" data-element_type="container"
+                            data-settings="{&quot;content_width&quot;:&quot;full&quot;}">
+                            <div class="elementor-element elementor-element-11cb58c5 elementor-widget elementor-widget-google_maps"
+                                data-id="11cb58c5" data-element_type="widget" data-widget_type="google_maps.default">
+                                <div class="elementor-widget-container">
+                                    <div class="elementor-custom-embed">
+                                        <iframe loading="lazy"
+                                            src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac13f9333bd6e43ebd5da672cfee3332d9905b294eebb722bb114d81b59725a53&amp;source=constructor"
+                                            title="Санкт-ПетербкргШлиссельбургский проспект, 37"
+                                            aria-label="Санкт-ПетербкргШлиссельбургский проспект, 37"></iframe>
                                     </div>
                                 </div>
                             </div>
@@ -2020,14 +2017,15 @@
                     </div>
                 </div>
             </div>
+        </div>
 
 
     </main>
 
-    <footer style="height: 45px; background-color: #84BA0F;">
-        <p style="color: white; display: flex; justify-content: center; align-items: center; height: 45px;">© 2012-2024
-            YogaPeople</p>
-    </footer>
+	<footer style="height: 45px; background-color: #84BA0F;">
+		<p style="color: white; display: flex; justify-content: center; align-items: center; height: 45px;">© 2012-2024
+			YogaPeople</p>
+	</footer>
 
 
     <script src="../wp-content/themes/hello-elementor/assets/js/hello-frontend.min8a54.js?ver=1.0.0"
